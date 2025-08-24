@@ -148,6 +148,12 @@ Just when we thought it was over, something unexpected happened. On July 10, 202
 <script>
   const storyForm = document.getElementById("storyForm");
   const storiesContainer = document.getElementById("storiesContainer");
+window.onload = function() {
+    const savedStories = JSON.parse(localStorage.getItem("stories")) || [];
+    savedStories.forEach(story => {
+      displayStory(story.name, story.text);
+    });
+  };
 
   storyForm.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -156,16 +162,19 @@ Just when we thought it was over, something unexpected happened. On July 10, 202
     const storyText = document.getElementById("story").value.trim();
 
     if (storyText === "") return;
- const storyDiv = document.createElement("div");
-    storyDiv.classList.add("story");
-    storyDiv.innerHTML = <strong>${name}</strong><p>${storyText}</p>;
-
-    storiesContainer.appendChild(storyDiv);
-
-    // Reset form fields
-    storyForm.reset();
+   const savedStories = JSON.parse(localStorage.getItem("stories")) || [];
+    savedStories.push({ name, text: storyText });
+    localStorage.setItem("stories", JSON.stringify(savedStories));
+displayStory(name, storyText);
+  storyForm.reset();
   });
+
+  function displayStory(name, text) {
+    const storyDiv = document.createElement("div");
+    storyDiv.classList.add("story");
+    storyDiv.innerHTML = <strong>${name}</strong><p>${text}</p>;
+    storiesContainer.appendChild(storyDiv);
+  }
 </script>
-  </section>
 </body>
 </html>
