@@ -1,7 +1,7 @@
 .share-story {
   margin-top: 40px;
   padding: 20px;
-  background: #fce4ec;
+  background: #FFFFE0;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -106,7 +106,7 @@ background-color: #FFFFFF;
 }
 
 tr:nth-child(odd) {
-background-color: #FF8DA1;
+background-color: #90D5FF;
 }
 figure {
 background: #fff7f0;
