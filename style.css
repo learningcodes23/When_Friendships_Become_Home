@@ -1,0 +1,151 @@
+.share-story {
+  margin-top: 40px;
+  padding: 20px;
+  background: #fce4ec;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.share-story h2 {
+  margin-top: 0;
+  color: #ad1457;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background: #ec407a;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #d81b60;
+}
+
+#storiesContainer {
+  margin-top: 30px;
+}
+
+.story {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+body{
+font-family:Times New Roman,Times;
+margin:0;
+padding:0;
+background-color:#90D5FF;
+color:#333;
+}
+ header{
+background-color:#90D5FF;
+color:#00008B;
+padding:30px;
+text-align:center;
+}
+h1{
+color:#00008B;
+margin-top:20px;
+}
+section {
+padding: 20px;
+max-width: 900px;
+margin: auto;
+background: white;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+margin-bottom: 30px;
+}
+
+video {
+width: 500px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+display: block;
+margin: 20px auto;
+height:auto;
+width:100%;
+}
+h2{
+line-height:1.8;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin: 20px 0;
+font-size: 16px;
+text-align: left;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+td {
+border: 1px solid #ddd;
+padding: 12px;
+}
+
+tr:nth-child(even) {
+background-color: #FFFFFF;
+}
+
+tr:nth-child(odd) {
+background-color: #FF8DA1;
+}
+figure {
+background: #fff7f0;
+border: 2px solid #FF8DA1;
+border-radius: 8px;
+overflow: hidden;
+margin: 0;
+}
+figure img {
+width: 100%;
+display: block;
+}
+.gallery {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;   
+max-width: 1000px;   
+margin: auto;  
+padding: 20px;
+}
+
+.gallery figure {
+background: #fff;   
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+text-align: center;
+overflow: hidden;
+}
+
+.gallery img {
+width: 100%;
+display: block;
+}
+
+.gallery figcaption {
+padding: 10px;
+font-size: 14px;
+color: #555;
+}
+p{
+text-align:justify;
+}
