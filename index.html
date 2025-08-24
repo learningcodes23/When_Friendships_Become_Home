@@ -134,21 +134,25 @@ Just when we thought it was over, something unexpected happened. On July 10, 202
   <section class="share-story">
     <h2>Every Friendship Has a Story</h2>
     <p>✨ Now it’s your turn. Share your friendship story with us.</p>
-   <form id="storyForm">
-    <label for="name">Your Name (optional):</label><br>
-    <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+ <form id="storyForm">
+  <label for="name">Your Name (optional):</label><br>
+  <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
 
-    <label for="story">Your Story:</label><br>
-    <textarea id="story" name="story" rows="5" placeholder="Write your story here..." required></textarea><br><br>
+  <label for="story">Your Story:</label><br>
+  <textarea id="story" name="story" rows="5" placeholder="Write your story here..." required></textarea><br><br>
 
-    <button type="submit">Share Story</button>
-  </form>
-  <div id="storiesContainer"></div>
-</section>
+
+  <button type="submit">Share Story</button>
+</form>
+
+<div id="storiesContainer"></div>
+
 <script>
   const storyForm = document.getElementById("storyForm");
   const storiesContainer = document.getElementById("storiesContainer");
-window.onload = function() {
+
+ 
+  window.onload = function() {
     const savedStories = JSON.parse(localStorage.getItem("stories")) || [];
     savedStories.forEach(story => {
       displayStory(story.name, story.text);
@@ -156,23 +160,29 @@ window.onload = function() {
   };
 
   storyForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+    e.preventDefault(); 
 
     const name = document.getElementById("name").value.trim() || "Anonymous";
     const storyText = document.getElementById("story").value.trim();
 
     if (storyText === "") return;
-   const savedStories = JSON.parse(localStorage.getItem("stories")) || [];
+
+ 
+    const savedStories = JSON.parse(localStorage.getItem("stories")) || [];
     savedStories.push({ name, text: storyText });
     localStorage.setItem("stories", JSON.stringify(savedStories));
-displayStory(name, storyText);
-  storyForm.reset();
+
+  
+    displayStory(name, storyText);
+
+ 
+    storyForm.reset();
   });
 
   function displayStory(name, text) {
     const storyDiv = document.createElement("div");
     storyDiv.classList.add("story");
-    storyDiv.innerHTML = <strong>${name}</strong><p>${text}</p>;
+    storyDiv.innerHTML = `<strong>${name}</strong><p>${text}</p>`;
     storiesContainer.appendChild(storyDiv);
   }
 </script>
