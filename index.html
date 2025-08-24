@@ -134,18 +134,38 @@ Just when we thought it was over, something unexpected happened. On July 10, 202
   <section class="share-story">
     <h2>Every Friendship Has a Story</h2>
     <p>✨ Now it’s your turn. Share your friendship story with us.</p>
-    <form>
-      <label for="name">Your Name (optional):</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name">
+   <form id="storyForm">
+    <label for="name">Your Name (optional):</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
 
-      <label for="story">Your Friendship Story:</label>
-      <textarea id="story" name="story" rows="5" placeholder="Write your story here..."></textarea>
+    <label for="story">Your Story:</label><br>
+    <textarea id="story" name="story" rows="5" placeholder="Write your story here..." required></textarea><br><br>
 
-      <button type="submit">Share Story</button>
-    </form>
-    <div id="storiesContainer">
-<h3>Shared Stories</h3>
-</div>
+    <button type="submit">Share Story</button>
+  </form>
+  <div id="storiesContainer"></div>
+</section>
+<script>
+  const storyForm = document.getElementById("storyForm");
+  const storiesContainer = document.getElementById("storiesContainer");
+
+  storyForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim() || "Anonymous";
+    const storyText = document.getElementById("story").value.trim();
+
+    if (storyText === "") return;
+ const storyDiv = document.createElement("div");
+    storyDiv.classList.add("story");
+    storyDiv.innerHTML = <strong>${name}</strong><p>${storyText}</p>;
+
+    storiesContainer.appendChild(storyDiv);
+
+    // Reset form fields
+    storyForm.reset();
+  });
+</script>
   </section>
 </body>
 </html>
